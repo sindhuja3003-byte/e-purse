@@ -6,23 +6,23 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "account")
+@Table(name = "admin")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Account {
+public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long accountId;
+    private Long adminId;
 
-    private String accountNumber;
-    private String utr;
-    private Long customerId;
+    private Long accountId;
     private Double balance;
-    private Double debit;
     private Double credit;
-    private String currency;
+    private Double debit;
+    private String utr;
     private LocalDateTime date;
+    private Long merchantId;
+    private String description;
 }
