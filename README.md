@@ -16,8 +16,6 @@ Account table- account id(pri), account number, customer id, wallet balance, dat
 
 Customer details- customer id(pri), customer name, dob, mobile number, email, address, product id(optional)
 
-Transaction info- id, account id, amount , utr, credit, debit, date, merchant id, description
-
 (Merchant service)
 Product table- Name, product id, description, price, currency
 
