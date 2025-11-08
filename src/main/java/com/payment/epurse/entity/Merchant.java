@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "merchant")
@@ -24,9 +25,11 @@ public class Merchant {
     private String merchantName;
     private String mail;
     private int mobileNumber;
-    private double accountBalence;
+    private double ammount;
     private Date date;
-    private double credit;
-    private double debit;
-    private Product productId;
+    private String utr;
+
+    @OneToMany
+    private List<Product> productId;
+
 }
