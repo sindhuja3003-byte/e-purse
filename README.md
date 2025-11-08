@@ -12,16 +12,16 @@ Payment service conatins trasaction details (get) internally hitting notificatio
 Data model:
 
 (Wallet service)
-Account table- account id(pri), acctount number, customer id, account balance, date, debit, credit, currency
+Account table- account id(pri), acctount number, customer id, account balance, date, debit, credit,utr, currency
 
 Customer details- customer id(pri), customer name, dob, mobile number, email, address, product id(optional)
 
-Admin table- admin id, account id, account balance, credit, debit, date, merchant id, description
+Admin table- admin id, account id, account balance, utr, credit, debit, date, merchant id, description
 
 (Merchant service)
 Product table- Name, product id, description, price, currency
 
-merchant account details- merchant id, customer id, mail,mobile, account balance, date, debit, credit, product id(list)
+merchant account details- merchant id, customer id, mail,mobile, account balance, date, utr, debit, credit, product id(list)
 
 API:
 1.GetProductDetails- fetches details of the product
