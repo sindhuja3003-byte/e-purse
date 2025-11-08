@@ -3,6 +3,7 @@ package com.payment.epurse.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,7 +21,7 @@ public class Account {
     private String accountNumber;
     private String utr;
     private Long customerId;
-    private Double balance;
+    private BigDecimal balance;
     private Double debit;
     private Double credit;
     private String currency;

@@ -133,7 +133,7 @@ public class WalletService {
     public PaymentProcessResponse initiateTransaction(PaymentProcessRequest request) {
 
         Optional<Account> customerAccount = accountRepository.findAccountByCustomerId(request.getCustomerId());
-        if (customerAccount.filter(account -> account.getBalance() >= request.getAmount()).isPresent()) {
+        if (customerAccount.filter(account -> account.getBalance().compareTo(request.getAmount()) >= 0).isPresent()) {
             /*
              * Initiate the transaction for debiting the amount from wallet using TransactionType as DEBIT
              *
