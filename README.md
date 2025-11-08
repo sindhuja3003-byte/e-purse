@@ -38,7 +38,7 @@ API:
 Tech stack:
 Springboot, rest api, microservices, maven, java 17, Postgres, postman, git hub, junit, sonar,
 spring data JPA, circuit breaker(hystrix), kafka, docker, CI/CD, Kubernates, jmeter, indexing on DB
-API gateway, oauth
+API gateway, oauth, scheduler
 
 
 user story 1- Wallet services(GetWalletDetails, UpdateWalletDetails, UpdateCustomerDetails, UpadteAccountDetails)
@@ -54,5 +54,6 @@ user story 4- Integration of services and testing
 Extra:
 Rewards points for each transactions, also based on transactions(more than particular amount)
 monthly spend categorization
+Use scheduler service to settle amount at the end of day to each merchant
 
 
