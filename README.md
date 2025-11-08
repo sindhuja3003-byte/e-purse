@@ -7,36 +7,46 @@ Wallet service contains wallet details(get put), customer details(get), account 
 
 Merchant service(cart details) conatins product details(get, put), trasaction details (get)
 
-Payment service conatins trasaction details (get) internally hitting notification service to send message to customer and merchant.
+Payment service conatins transaction details (get) internally hitting notification service to send message to customer and merchant.
 
 Data model:
 
 (Wallet service)
-Account table- account id(pri), acctount number, customer id, account balance, created datetime, updated datetime, debit, credit,utr, currency
+Account table- account id(pri), account number, customer id, wallet balance, date, debit, credit,utr, currency
 
 Customer details- customer id(pri), customer name, dob, mobile number, email, address, product id(optional)
 
-Admin table- admin id, account id, account balance, utr, credit, debit, created datetime, updated datetime, merchant id, description
-
 (Merchant service)
-Product table- Name, product id, description, price, currency
+Product table- Name, product id, merchant id, description, price, currency
 
-merchant account details- merchant id, customer id, mail,mobile, account balance, created datetime, updated datetime, utr, debit, credit, product id(list)
+merchant account details- merchant id, customer id, mail, mobile, amount, date, utr, product id(list)
 
-(Payment service)
-payment table- payment id, account id,customer id, merchant id, amount, currency, created datetime, updated datetime, utr, status
+payment table- id, customer id, merchant id, created dateTime, updated dateTime, utr, debit, credit, status
 
 API:
 1.GetProductDetails- fetches details of the product
+restEndpoint- GET/getProductById/{ProductId)
+
 2.UpdateProductDetails- update the product details
-3.DeteleProductDetails- delete product details
-4.GetWalletDetails- fetches details of the customer wallet info
-5.UpdateWalletDetails- update details of the customer wallet info
-6.UpdateCustomerDetails- update the customer details
-7.PaymentAPI(post)- validate the request and send it to payment process
-8.notificationAPI(post)- sent notification to merchant and customer
-9.UpadteAccountDetails- update the account details
-10.UpdateMerchantAccountDetails- update merchant details
+restEndpoint- PUT/updateProductById/{ProductId)
+
+3.GetWalletDetails- fetches details of the customer wallet info
+restEndpoint- GET/getCustomerById/{CustId)
+
+4.UpdateWalletDetails- update details of the customer wallet info
+restEndpoint- PUT/updateCustomerById/{CustId)
+
+5.PaymentAPI(post)- validate the request and send it to payment process
+restEndpoint- POST/paymentProcess
+requestBody- {AccountId, customerId, merchantId, productId}
+responseBody- {status} 
+
+6.notificationAPI(post)- sent notification to merchant and customer
+restEndpoint- POST/notifyUser
+requestBody-{customerId, MerchantId}
+
+7.UpdateAccountDetails- update the account details
+restEndpoint- PUT/updateAcountById/{AccountId)
 
 Tech stack:
 Springboot, rest api, microservices, maven, java 17, Postgres, postman, git hub, junit, sonar,

@@ -1,0 +1,19 @@
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class CustomerServices {
+    private final CustomerRepository customerRepository; 
+ 
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
+    @Transactional
+    public Customer updateCreditAmount(Long customerId, Double amountToCredit) {
+        Customer customer = customerRepository.findById(customerId)
+                                            .orElseThrow(() -> new RuntimeException("Customer not found"));
+        customer.setCreditAmount(customer.getCreditAmount() + amountToCredit);
+        return customerRepository.save(customer);
+    }
+}
