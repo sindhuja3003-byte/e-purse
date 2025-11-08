@@ -10,13 +10,17 @@ Merchant service(cart details) conatins product details(get, put), trasaction de
 Payment service conatins trasaction details (get) internally hitting notification service to send message to customer and merchant.
 
 Data model:
-(Wallet)
+
+(Wallet service)
 Account table- account id(pri), acctount number, customer id, account balance, date, debit, credit, currency
+
 Customer details- customer id(pri), customer name, dob, mobile number, email, address, product id(optional)
+
 Admin table- admin id, account id, account balance, credit, debit, date, merchant id, description
 
-(Merchant)
+(Merchant service)
 Product table- Name, product id, description, price, currency
+
 merchant account details- merchant id, customer id, mail,mobile, account balance, date, debit, credit, product id(list)
 
 API:
