@@ -23,6 +23,9 @@ Product table- Name, product id, description, price, currency
 
 merchant account details- merchant id, customer id, mail,mobile, account balance, created datetime, updated datetime, utr, debit, credit, product id(list)
 
+(Payment service)
+payment table- payment id, account id,customer id, merchant id, amount, currency, created datetime, updated datetime, utr, status
+
 API:
 1.GetProductDetails- fetches details of the product
 2.UpdateProductDetails- update the product details
