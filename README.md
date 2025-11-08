@@ -19,7 +19,7 @@ Customer details- customer id(pri), customer name, dob, mobile number, email, ad
 (Merchant service)
 Product table- Name, product id, description, price, currency
 
-merchant account details- merchant id, customer id, mail, mobile, amount, date, utr, debit, credit, product id(list)
+merchant account details- merchant id, customer id, mail, mobile, amount, date, utr, product id(list)
 
 payment table- id, customer id, merchant id, created dateTime, updated dateTime, utr, debit, credit, status
 
