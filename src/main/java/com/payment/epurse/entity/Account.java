@@ -16,7 +16,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountId;
-
+    @NonNull
     private String accountNumber;
     private String utr;
     private Long customerId;
