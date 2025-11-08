@@ -17,5 +17,5 @@ package com.payment.epurse.dto;
     private Double credit;
     private String currency;
     private LocalDateTime date;
-}
+
 }
