@@ -24,16 +24,16 @@ Product table- Name, product id, description, price, currency
 merchant account details- merchant id, customer id, mail,mobile, account balance, date, debit, credit, product id(list)
 
 API:
-1.GetProductDetails
-2.UpdateProductDetails
-3.DeteleProductDetails
-4.GetWalletDetails
-5.UpdateWalletDetails
-6.UpdateCustomerDetails
-7.PaymentAPI(post)
-8.notificationAPI(post)
-9.UpadteAccountDetails
-10.UpdateMerchantAccountDetails
+1.GetProductDetails- fetches details of the product
+2.UpdateProductDetails- update the product details
+3.DeteleProductDetails- delete product details
+4.GetWalletDetails- fetches details of the customer wallet info
+5.UpdateWalletDetails- update details of the customer wallet info
+6.UpdateCustomerDetails- update the customer details
+7.PaymentAPI(post)- validate the request and send it to payment process
+8.notificationAPI(post)- sent notification to merchant and customer
+9.UpadteAccountDetails- update the account details
+10.UpdateMerchantAccountDetails- update merchant details
 
 Tech stack:
 Springboot, rest api, microservices, maven, java 17, Postgres, postman, git hub, junit, sonar,
